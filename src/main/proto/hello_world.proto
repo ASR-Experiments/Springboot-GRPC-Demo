@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "com.asr.example.grpc.demo.proto";
+option java_multiple_files = true;
+option java_outer_classname = "HelloWoldProto";
+
+message HelloWorldRequest {
+    optional string name = 1;
+}
+
+message HelloWorldResponse {
+    string greeting = 1;
+}
+
+service HelloWorldService {
+    rpc sayHello(HelloWorldRequest) returns (HelloWorldResponse);
+}
